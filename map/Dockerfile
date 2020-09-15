@@ -7,10 +7,10 @@ LABEL maintainer="1079087531@qq.com"
 # Replace apt source
 ADD sources.list /etc/apt/sources.list
 
-# Install Node and NPM
+# Install Nginx
 RUN apt-get update && apt-get -y install nginx
 
-# Add config
+# Add Nginx config
 ADD nginx.conf /etc/nginx/nginx.conf
 
 # Copy app to /code
