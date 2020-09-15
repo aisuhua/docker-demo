@@ -11,7 +11,8 @@ ADD sources.list /etc/apt/sources.list
 RUN apt-get update && apt-get -y install nginx
 
 # Add Nginx config
-ADD nginx.conf /etc/nginx/nginx.conf
+RUN rm /etc/nginx/sites-enabled/default
+ADD map.conf /etc/nginx/sites-enabled/map.conf
 
 # Copy app to /code
 COPY code /code
